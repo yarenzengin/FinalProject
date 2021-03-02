@@ -25,14 +25,24 @@ namespace ConsoleUI
                 Console.WriteLine(category.CategoryName);
             }
         }
-
+        //arayüz de handle 
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
-            foreach (var product in productManager.GetProductDetails())//tüm ürünleri ver
+            var result = productManager.GetProductDetails();//işlemi çalıştırdı
+            if (result.Success == true)
             {
-                Console.WriteLine(product.ProductName + "/"+ product.CategoryName);
+                foreach (var product in result.Data)//tüm ürünleri ver
+                {
+                    Console.WriteLine(product.ProductName + "/" + product.CategoryName);
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+
+           
         }
     }
 }
