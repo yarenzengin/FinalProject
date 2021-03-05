@@ -44,7 +44,7 @@ namespace Business.Concrete
             if (DateTime.Now.Hour == 22)
             {
                 //sadece mesj döndürüyorum
-                //default ı = null,ürün listemiz null ,neden? frontentci ona göre karşılicak
+                //default ı = null,ürün listemiz null ,neden? frontendci ona göre karşılicak
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductsListed);//datayı döndürmüşüm sistem diyor ki List döndürmen normal ama onun için bir data döndürmen lazım
