@@ -13,7 +13,9 @@ namespace ConsoleUI
         {
              ProductTest();
             //IoC
-            //CategoryTest();
+            CategoryTest();
+
+
 
         }
 
