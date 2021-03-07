@@ -21,7 +21,7 @@ namespace Business.Concrete
         {
             _productDal = productDal;
         }
-
+         
         public IResult Add(Product product)
         {
             if (product.ProductName.Length<2)
@@ -33,7 +33,7 @@ namespace Business.Concrete
             _productDal.Add(product);
 
             // bunu yapabilmek için ctor eklenmeli
-            return new SuccessResult("ürün eklendi");//IResultı impelemente ettiği için tutabiliyor
+            return new SuccessResult(Messages.ProductAdded);//IResultı impelemente ettiği için tutabiliyor
 
         }
 
