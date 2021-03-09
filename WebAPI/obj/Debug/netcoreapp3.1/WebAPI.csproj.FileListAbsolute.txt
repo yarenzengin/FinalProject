@@ -66,3 +66,11 @@ C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\Core.pdb
 C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\DataAccess.pdb
 C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\Entities.pdb
 C:\Users\Yaren\source\repos\FinalProject\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CopyComplete
+C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\Autofac.dll
+C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\Autofac.Extras.DynamicProxy.dll
+C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\Yaren\source\repos\FinalProject\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll

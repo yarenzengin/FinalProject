@@ -29,11 +29,11 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {//Autofac bize kendi AOP imkanýný sunucak o yüzdcen autofac enejkte edicez
-            //Autofac, Ninject, CastleWindsor , StructureMap, LightUnject,DryInject --> IoC Container
-           //AOP
+         //Autofac, Ninject, CastleWindsor , StructureMap, LightUnject,DryInject --> IoC Container
+         //AOP
             services.AddControllers();
-            services.AddSingleton<IProductService,ProductManager>(); //bana arka planda bir referans oluþtur, biizm yerimize new liyor
-            services.AddSingleton<IProductDal, EfProductDal>();    
+            //services.AddSingleton<IProductService,ProductManager>(); //bana arka planda bir referans oluþtur, biizm yerimize new liyor
+            //services.AddSingleton<IProductDal, EfProductDal>();    
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
