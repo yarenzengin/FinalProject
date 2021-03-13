@@ -3,6 +3,7 @@ using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
@@ -11,6 +12,7 @@ using Entities.DTOs;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -18,26 +20,39 @@ namespace Business.Concrete
     public class ProductManager : IProductService
     {
         IProductDal _productDal; // soyut nesneyle bağlantı kurduk
-
+        ICategoryService _categoryService;
 
         //productmanager new lendiğinde constructor bana bir tane IProductDal referansı ver(InMemeory olabilir, yarın entityFramework Olabilir VB.) 
-        public ProductManager(IProductDal productDal)//injection  
+        public ProductManager(IProductDal productDal, ICategoryService categoryService)//injection  
         {
             _productDal = productDal;
+            _categoryService = categoryService;
+           
         }
-         //validation : eklemek istediğin nesnenin yapısal olark doğru olup olmadığını kontrol ediyor , Business code 'u  ile karıştıtılmamalı 
-        
-        
+        //validation : eklemek istediğin nesnenin yapısal olark doğru olup olmadığını kontrol ediyor , Business code 'u  ile karıştıtılmamalı 
+
+
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-
             //business codes : iş ihtiyaçlarımıza uygunluk 
-          
-            _productDal.Add(product);
+            //iş motoru
+            //hatalı kural geldi diyelim  tek bir result döner o yüzden resulta attık ,ya null ya da doludur
+          IResult result =   BusinessRules.Run(CheckIfProductNameExists(product.ProductName),
+               CheckIfProductCountOfCategoryCorrect(product.CategoryId), CheckIfCategoryLimitExceded());
 
-            // bunu yapabilmek için ctor eklenmeli
-            return new SuccessResult(Messages.ProductAdded);//IResultı impelemente ettiği için tutabiliyor
+            if (result!=null)//result kurala uymayan bir durum oluşmuşsa
+            {
+                return result;
+            }
+            _productDal.Add(product);
+            return new SuccessResult(Messages.ProductAdded);
+           
+
+          
+
+
+
 
         }
 
@@ -84,5 +99,43 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<ProductDetailDTO>>(_productDal.GetProductDetails());
         }
+
+        public IResult Update(Product product)
+        {
+            throw new NotImplementedException();
+        }
+        private IResult CheckIfProductCountOfCategoryCorrect(int categoryId)//bunu yapabilmek için category i de göndermek gerekir
+        {
+            //1 kategoride max 10 ürün olabilir, önce kaç tane ürün olacağına bakmalıyız
+          //select count(*) from products where categoryId = 1
+            var result = _productDal.GetAll(p => p.CategoryId == categoryId).Count;
+            if (result >= 15)
+            {
+                return new ErrorResult(Messages.ProductCountOfCategoryError);
+            }
+            return new SuccessResult();
+        }
+        // aynı isimde ürün eklenemez
+        private IResult CheckIfProductNameExists(string productName)
+        {
+            //any var  mı demek
+            var result = _productDal.GetAll(p => p.ProductName == productName).Any();
+            if (result)
+            {
+                return new ErrorResult(Messages.ProductNameAlreadyExist);
+            }
+            return new SuccessResult();
+        }
+        //eğer bunu categorymanager da yazmış olsaydık bu tek başına bir servis demektir
+        private IResult CheckIfCategoryLimitExceded()//Product için CategoryService nasıl yorumlanıyor
+        {
+            var result = _categoryService.GetAll();
+            if (result.Data.Count > 15)
+            {
+                return new ErrorResult(Messages.CategoryLimitExceded);
+            }
+            return new SuccessResult();
+        }
+        }
     }
-}
+
