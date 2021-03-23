@@ -31,7 +31,8 @@ namespace Business.Concrete
         }
         //validation : eklemek istediğin nesnenin yapısal olark doğru olup olmadığını kontrol ediyor , Business code 'u  ile karıştıtılmamalı 
 
-
+        //claim : iddia etmek , bu kullanıcının admin veya pro.add claimlerinden birine sahip olm.gerekiyor
+        //[SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {

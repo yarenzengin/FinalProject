@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JOOJvNOmqCo3Pg35WlMNopf5ypaHsonXpZmLbtbm3MrDkNVfREyS6H8vLEvnaxSXWNOwpT3mbP+vyQQ9cbswSA==",
+  "dgSpecHash": "dzbKKdsocV1aAV6CfkEr9o9IaEWitYjVVDHMbtW+Tp/XhGQ3vjiUhcqicLUfAbB9IPvy5nqs82JJXRjrQEU9MA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Yaren\\source\\repos\\FinalProject\\Business\\Business.csproj",
   "expectedPackageFiles": [
@@ -66,6 +66,8 @@
     "C:\\Users\\Yaren\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.11\\microsoft.extensions.primitives.3.1.11.nupkg.sha512",
     "C:\\Users\\Yaren\\.nuget\\packages\\microsoft.extensions.webencoders\\2.1.0\\microsoft.extensions.webencoders.2.1.0.nupkg.sha512",
     "C:\\Users\\Yaren\\.nuget\\packages\\microsoft.identity.client\\3.0.8\\microsoft.identity.client.3.0.8.nupkg.sha512",
+    "C:\\Users\\Yaren\\.nuget\\packages\\microsoft.identitymodel.logging\\6.9.0\\microsoft.identitymodel.logging.6.9.0.nupkg.sha512",
+    "C:\\Users\\Yaren\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.9.0\\microsoft.identitymodel.tokens.6.9.0.nupkg.sha512",
     "C:\\Users\\Yaren\\.nuget\\packages\\microsoft.net.http.headers\\2.1.0\\microsoft.net.http.headers.2.1.0.nupkg.sha512",
     "C:\\Users\\Yaren\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Yaren\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
@@ -142,7 +144,7 @@
     "C:\\Users\\Yaren\\.nuget\\packages\\system.runtime.serialization.primitives\\4.3.0\\system.runtime.serialization.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Yaren\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
     "C:\\Users\\Yaren\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0\\system.security.cryptography.algorithms.4.3.0.nupkg.sha512",
-    "C:\\Users\\Yaren\\.nuget\\packages\\system.security.cryptography.cng\\4.4.0\\system.security.cryptography.cng.4.4.0.nupkg.sha512",
+    "C:\\Users\\Yaren\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "C:\\Users\\Yaren\\.nuget\\packages\\system.security.cryptography.csp\\4.3.0\\system.security.cryptography.csp.4.3.0.nupkg.sha512",
     "C:\\Users\\Yaren\\.nuget\\packages\\system.security.cryptography.encoding\\4.3.0\\system.security.cryptography.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\Yaren\\.nuget\\packages\\system.security.cryptography.openssl\\4.3.0\\system.security.cryptography.openssl.4.3.0.nupkg.sha512",
