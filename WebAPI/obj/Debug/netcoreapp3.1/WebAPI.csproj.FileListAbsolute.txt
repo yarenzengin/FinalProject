@@ -74,3 +74,4 @@ C:\Users\Yaren\source\repos\FinalProject\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.M
 C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
 C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Yaren\source\repos\FinalProject\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
