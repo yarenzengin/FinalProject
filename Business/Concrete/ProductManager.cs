@@ -92,7 +92,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id));
         }
         [CacheAspect]
-        [PerformanceAspect(1)]//bu metotun çalışması 5 sn yi geçerse beni uyar
+        [PerformanceAspect(10)]//bu metotun çalışması 5 sn yi geçerse beni uyar
         public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product> (_productDal.Get(p=> p.ProductId == productId));
