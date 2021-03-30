@@ -30,7 +30,9 @@ namespace WebAPI
          //AOP
             services.AddControllers();
             //services.AddSingleton<IProductService,ProductManager>(); //bana arka planda bir referans oluþtur, biizm yerimize new liyor
-            //services.AddSingleton<IProductDal, EfProductDal>();   
+            //services.AddSingleton<IProductDal, EfProductDal>();  
+
+            services.AddCors();
 
             
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -67,6 +69,7 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(builder=>builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
